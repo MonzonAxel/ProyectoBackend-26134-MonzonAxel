@@ -1,0 +1,22 @@
+{
+  "name": "proyectobackend-26134-monzonaxel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonzonAxel/ProyectoBackend-26134-MonzonAxel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MonzonAxel/ProyectoBackend-26134-MonzonAxel/issues"
+  },
+  "homepage": "https://github.com/MonzonAxel/ProyectoBackend-26134-MonzonAxel#readme"
+}
