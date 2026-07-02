@@ -48,20 +48,35 @@ npm run dev
 
 ## Endpoints con AUTH
 
-- POST `/api/auth/login` 
-- POST `/api/products`
-- PUT `/api/products/:id` 
-- DELETE `/api/products/:id` 
-
 Para los endpoints protegidos agregar el header:
 ```
 Authorization: Bearer <token>
 ```
 
-El token se obtiene haciendo POST a `/api/auth/login`.
-
-## Test
-
-```bash
-npm test
+**POST `/api/auth/login`** — devuelve el token
+```json
+{
+  "email": "email_env",
+  "password": "password_env"
+}
 ```
+
+**POST `/api/products`** — crea un producto
+```json
+{
+  "name": "Zapatillas",
+  "price": 200,
+  "stock": 10
+}
+```
+
+**PUT `/api/products/:id`** — edita un producto
+```json
+{
+  "name": "Editando la zapa",
+  "price": 300,
+  "stock": 4
+}
+```
+
+**DELETE `/api/products/:id`** — elimina un producto no requiere body
