@@ -1,41 +1,67 @@
 # ProyectoBackend-26134-MonzonAxel
 
-Proyecto en Node.js para probar comandos por consola usando la API de FakeStore.
+API REST en Node.js con Express y Firebase como base de datos.
 
-## Lo que hace la APP hasta el momento
+## Lo que hace la app
 
-- Consultar todos los productos
-- Consultar un producto por id
-- Crear un producto
-- Eliminar un producto
+- Login con JWT
+- Ver todos los productos
+- Ver un producto por ID
+- Crear un producto (requiere token)
+- Editar un producto (requiere token)
+- Eliminar un producto (requiere token)
 
 ## Instalacion
-
-1. Instalar dependencias del proyecto:
 
 ```bash
 npm install
 ```
 
+Crear un archivo `.env` en la raiz con estas variables:
+
+```
+PORT=
+JWT_SECRET=
+ADMIN_EMAIL=
+ADMIN_PASSWORD=
+FIREBASE_API_KEY=
+FIREBASE_AUTH_DOMAIN=
+FIREBASE_PROJECT_ID=
+FIREBASE_STORAGE_BUCKET=
+FIREBASE_MESSAGING_SENDER_ID=
+FIREBASE_APP_ID=
+```
+
 ## Uso
 
-El proyecto se ejecuta con:
+Iniciar el servidor:
 
 ```bash
-npm run start <METODO> <RECURSO> [ARGUMENTOS]
+npm run dev
 ```
 
-Ejemplos:
+## Endpoints sin AUTH
 
-```bash
-npm run start GET products
-npm run start GET products/15
-npm run start POST products T-Shirt-Rex 300 remeras
-npm run start DELETE products/7
+- GET  `/` 
+- GET `/api/products` 
+- GET `/api/products/:id` 
+
+## Endpoints con AUTH
+
+- POST `/api/auth/login` 
+- POST `/api/products`
+- PUT `/api/products/:id` 
+- DELETE `/api/products/:id` 
+
+Para los endpoints protegidos agregar el header:
+```
+Authorization: Bearer <token>
 ```
 
-Tambien se puede ejecutar directo con Node:
+El token se obtiene haciendo POST a `/api/auth/login`.
+
+## Test
 
 ```bash
-node index.js GET products
+npm test
 ```
